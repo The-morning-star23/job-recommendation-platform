@@ -14,7 +14,7 @@ const recommendationRoutes = require('./routes/recommendationRoutes');
 const app = express();
 
 const corsOptions = {
-  origin: 'https://job-recommendation-platform.vercel.app',
+  origin: ['https://job-recommendation-platform.vercel.app', 'https://job-recommendation-platform-mqrdsizfz.vercel.app'],
   credentials: true,
 };
 
