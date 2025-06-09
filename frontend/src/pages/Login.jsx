@@ -1,32 +1,27 @@
-import { useState } from 'react';
-import API from '../services/api';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [form, setForm] = useState({ email: "", password: "" });
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const { data } = await API.post('/auth/login', { email, password });
-      localStorage.setItem('token', data.token);
-      navigate('/dashboard');
-    // eslint-disable-next-line no-unused-vars
-    } catch (err) {
-      alert('Login failed');
-    }
+    const res = await axios.post(
+      `${import.meta.env.VITE_API_URL}/auth/login`,
+      form
+    );
+    localStorage.setItem("token", res.data.token);
+    navigate("/");
   };
 
   return (
-    <form onSubmit={handleLogin} className="max-w-md mx-auto mt-10 p-6 border rounded shadow">
-      <h2 className="text-xl font-bold mb-4">Login</h2>
-      <input type="email" placeholder="Email" value={email}
-        onChange={(e) => setEmail(e.target.value)} required className="w-full p-2 mb-4 border" />
-      <input type="password" placeholder="Password" value={password}
-        onChange={(e) => setPassword(e.target.value)} required className="w-full p-2 mb-4 border" />
-      <button className="w-full bg-blue-600 text-white p-2 rounded">Login</button>
+    <form onSubmit={handleSubmit}>
+      <h2>Login</h2>
+      <input placeholder="Email" onChange={(e) => setForm({ ...form, email: e.target.value })} />
+      <input placeholder="Password" type="password" onChange={(e) => setForm({ ...form, password: e.target.value })} />
+      <button type="submit">Login</button>
     </form>
   );
 };
