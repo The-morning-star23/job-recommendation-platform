@@ -6,10 +6,10 @@ const Dashboard = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    axios
-      .get(`${import.meta.env.VITE_API_URL}/jobs/recommendations`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+    axios.get(`${import.meta.env.VITE_API_URL}/recommendations`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+
       .then((res) => setJobs(res.data))
       .catch((err) => console.error(err));
   }, []);
