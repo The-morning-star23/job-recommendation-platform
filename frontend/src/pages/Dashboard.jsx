@@ -6,6 +6,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+    console.log("Token:", token);
     axios.get(`${import.meta.env.VITE_API_URL}/recommendations`, {
       headers: { Authorization: `Bearer ${token}` },
     })
