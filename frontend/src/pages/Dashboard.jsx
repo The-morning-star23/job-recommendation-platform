@@ -9,7 +9,9 @@ const Dashboard = () => {
     console.log("Token:", token);
     axios.get(`${import.meta.env.VITE_API_URL}/recommendations`, {
       headers: { Authorization: `Bearer ${token}` },
+      withCredentials: true, // <-- this is important!
     })
+
 
       .then((res) => setJobs(res.data))
       .catch((err) => console.error(err));

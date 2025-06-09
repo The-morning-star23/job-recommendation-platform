@@ -13,7 +13,13 @@ const recommendationRoutes = require('./routes/recommendationRoutes');
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://job-recommendation-platform.vercel.app',
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(morgan('dev'));
 
