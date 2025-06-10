@@ -1,0 +1,66 @@
+.dashboard-container {
+  padding: 30px;
+  background: #f7f9fc;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.dashboard-header button {
+  padding: 8px 14px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dashboard-header button:hover {
+  background-color: #c0392b;
+}
+
+.dashboard-subtitle {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #555;
+}
+
+.dashboard-error {
+  color: #c0392b;
+  margin-bottom: 10px;
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.job-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.job-card h4 {
+  margin: 0 0 10px;
+  color: #2f80ed;
+}
+
+.job-card p {
+  margin: 6px 0;
+  color: #444;
+}
