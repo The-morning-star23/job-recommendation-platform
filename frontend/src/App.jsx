@@ -6,7 +6,8 @@ import CreateJob from './pages/CreateJob';
 import JobList from './pages/JobList';
 import Recommendations from './pages/Recommendations';
 import Navbar from './pages/Navbar';
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from './components/PrivateRoute';
+import Landing from './pages/Landing';
 
 function AppContent() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function AppContent() {
         <Route path="/create-job" element={<CreateJob />} />
         <Route path="/jobs" element={<JobList />} />
         <Route path="/recommendations" element={<Recommendations />} />
+        <Route path="/" element={<Landing />} />
       </Routes>
     </>
   );
