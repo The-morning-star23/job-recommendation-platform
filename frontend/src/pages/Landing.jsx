@@ -5,38 +5,29 @@ const Landing = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="landing">
+    <div className="landing-container">
       <header className="landing-header">
-        <h1 className="title">Find Your Dream Job</h1>
-        <p className="subtitle">Thousands of opportunities await you.</p>
-        <button className="login-btn" onClick={() => navigate('/login')}>
-          Get Started
-        </button>
+        <h1>Find Your Dream Job</h1>
+        <p>Smart recommendations tailored just for you.</p>
+        <div className="landing-buttons">
+          <button onClick={() => navigate('/login')}>Login</button>
+          <button onClick={() => navigate('/register')}>Register</button>
+        </div>
       </header>
-
-      <section className="categories">
-        <h2>Popular Categories</h2>
-        <div className="category-list">
-          <div className="category-card">IT & Software</div>
-          <div className="category-card">Sales & Marketing</div>
-          <div className="category-card">Finance</div>
-          <div className="category-card">Healthcare</div>
-          <div className="category-card">Remote Jobs</div>
+      <section className="landing-features">
+        <div className="feature-box">
+          <h3>AI Job Matching</h3>
+          <p>Get jobs recommended based on your profile and preferences.</p>
+        </div>
+        <div className="feature-box">
+          <h3>Personalized Dashboard</h3>
+          <p>Manage applications and track job insights easily.</p>
+        </div>
+        <div className="feature-box">
+          <h3>Secure & Fast</h3>
+          <p>Login securely and access your data anytime, anywhere.</p>
         </div>
       </section>
-
-      <section className="how-it-works">
-        <h2>How It Works</h2>
-        <ol>
-          <li>Sign Up or Login</li>
-          <li>Get Personalized Job Recommendations</li>
-          <li>Apply in One Click</li>
-        </ol>
-      </section>
-
-      <footer className="footer">
-        <p>© 2025 JobPlatform | <a href="/">Privacy</a> | <a href="/">Terms</a></p>
-      </footer>
     </div>
   );
 };
