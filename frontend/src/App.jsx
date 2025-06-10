@@ -17,13 +17,13 @@ function AppContent() {
     <>
       {!hideNavbar && <Navbar />}
       <Routes>
-        <Route path="/" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+        <Route path="/" element={<Landing />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/create-job" element={<CreateJob />} />
-        <Route path="/jobs" element={<JobList />} />
-        <Route path="/recommendations" element={<Recommendations />} />
-        <Route path="/" element={<Landing />} />
+        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+        <Route path="/create-job" element={<PrivateRoute><CreateJob /></PrivateRoute>} />
+        <Route path="/jobs" element={<PrivateRoute><JobList /></PrivateRoute>} />
+        <Route path="/recommendations" element={<PrivateRoute><Recommendations /></PrivateRoute>} />
       </Routes>
     </>
   );
