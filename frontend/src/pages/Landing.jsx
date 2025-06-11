@@ -1,35 +1,30 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Landing.css';
 
-const Landing = () => {
-  const navigate = useNavigate();
-
+function Landing() {
   return (
     <div className="landing-container">
       <header className="landing-header">
-        <h1>Find Your Dream Job</h1>
-        <p>Smart recommendations tailored just for you.</p>
-        <div className="landing-buttons">
-          <button onClick={() => navigate('/login')}>Login</button>
-          <button onClick={() => navigate('/register')}>Register</button>
-        </div>
+        <h1 className="landing-logo">CareerMatch</h1>
+        <nav>
+          <Link className="landing-link" to="/login">Login</Link>
+          <Link className="landing-link" to="/register">Register</Link>
+        </nav>
       </header>
-      <section className="landing-features">
-        <div className="feature-box">
-          <h3>AI Job Matching</h3>
-          <p>Get jobs recommended based on your profile and preferences.</p>
-        </div>
-        <div className="feature-box">
-          <h3>Personalized Dashboard</h3>
-          <p>Manage applications and track job insights easily.</p>
-        </div>
-        <div className="feature-box">
-          <h3>Secure & Fast</h3>
-          <p>Login securely and access your data anytime, anywhere.</p>
-        </div>
-      </section>
+
+      <main className="landing-main">
+        <h2 className="landing-title">Find the Perfect Job with AI</h2>
+        <p className="landing-subtitle">
+          Unlock job opportunities tailored to your skills and goals.
+        </p>
+        <Link to="/dashboard" className="landing-cta">Get Started</Link>
+      </main>
+
+      <footer className="landing-footer">
+        <p>© 2025 CareerMatch. All rights reserved.</p>
+      </footer>
     </div>
   );
-};
+}
 
 export default Landing;

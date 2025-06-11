@@ -1,95 +1,72 @@
-/* Reset default body and html styles */
-body, html {
+body {
   margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f7fa;
+  font-family: system-ui, sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
 }
 
-/* Ensure full width container */
 .landing-container {
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  padding: 0;
-  margin: 0 auto;
+}
+
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 1rem 2rem;
+}
+
+.landing-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.landing-link {
+  color: #f8fafc;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+}
+
+.landing-main {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f4f7fa;
-  box-sizing: border-box;
-}
-
-/* Header styles */
-.landing-header {
-  text-align: center;
-  padding: 60px 20px 40px;
-}
-
-.landing-header h1 {
-  font-size: 2.8rem;
-  color: #1f2937;
-  margin-bottom: 10px;
-}
-
-.landing-header p {
-  font-size: 1.1rem;
-  color: #6b7280;
-  margin-bottom: 30px;
-}
-
-/* Buttons */
-.landing-buttons {
-  display: flex;
   justify-content: center;
-  gap: 15px;
+  text-align: center;
+  padding: 2rem;
 }
 
-.landing-buttons button {
-  padding: 10px 25px;
-  font-size: 1rem;
-  background-color: #2563eb;
+.landing-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.landing-subtitle {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.landing-cta {
+  background-color: #3b82f6;
   color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.landing-buttons button:hover {
-  background-color: #1d4ed8;
-}
-
-/* Features Section */
-.landing-features {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin: 50px 20px;
-  max-width: 1200px;
-  width: 100%;
-}
-
-.feature-box {
-  background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-  flex: 1 1 280px;
-  max-width: 360px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.feature-box h3 {
-  font-size: 1.3rem;
-  color: #111827;
-  margin-bottom: 10px;
-}
-
-.feature-box p {
-  color: #4b5563;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
   font-size: 1rem;
+}
+
+.landing-footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background-color: #1e293b;
+  color: #cbd5e1;
 }
