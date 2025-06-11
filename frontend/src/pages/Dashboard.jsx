@@ -1,76 +1,49 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 
-const Dashboard = () => {
-  const [user, setUser] = useState(null);
+function Dashboard() {
   const [jobs, setJobs] = useState([]);
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.title = 'Dashboard - Job Platform';
-
-    const token = localStorage.getItem('token');
-    if (!token) return navigate('/login');
-
-    const fetchData = async () => {
+    const fetchRecommendations = async () => {
       try {
-        const resUser = await axios.get(`${import.meta.env.VITE_API_URL}/users/profile`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-
-        const resJobs = await axios.get(`${import.meta.env.VITE_API_URL}/jobs`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-
-        setUser(resUser.data);
-        setJobs(resJobs.data);
+        const res = await fetch(
+          `${import.meta.env.VITE_API_URL}/recommendations`
+        );
+        const data = await res.json();
+        setJobs(data);
       } catch (err) {
-        setError(err.response?.data?.message || 'Failed to fetch user data');
+        console.error('Failed to fetch jobs:', err);
+      } finally {
+        setLoading(false);
       }
     };
 
-    fetchData();
-  }, [navigate]);
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    navigate('/login');
-  };
+    fetchRecommendations();
+  }, []);
 
   return (
     <div className="dashboard-container">
-      <h2>User Dashboard</h2>
-
-      {error && <p className="error">{error}</p>}
-
-      {user && (
-        <div className="user-info">
-          <p><strong>Name:</strong> {user.name}</p>
-          <p><strong>Email:</strong> {user.email}</p>
-        </div>
-      )}
-
-      <button className="logout-btn" onClick={handleLogout}>Logout</button>
-
-      <h3>Your Jobs</h3>
-      {jobs.length > 0 ? (
-        <ul className="job-list">
-          {jobs.map((job) => (
-            <li key={job._id} className="job-item">
-              <h4>{job.title}</h4>
-              <p>{job.description}</p>
-              <p><strong>Company:</strong> {job.company}</p>
-            </li>
-          ))}
-        </ul>
+      <h1 className="dashboard-title">Recommended Jobs</h1>
+      {loading ? (
+        <p className="dashboard-loading">Loading...</p>
+      ) : jobs.length === 0 ? (
+        <p className="dashboard-empty">No job recommendations found.</p>
       ) : (
-        <p>No job postings available.</p>
+        <div className="job-list">
+          {jobs.map((job) => (
+            <div key={job._id} className="job-card">
+              <h3>{job.title}</h3>
+              <p>{job.company}</p>
+              <p className="location">{job.location}</p>
+              <p className="description">{job.description}</p>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
-};
+}
 
 export default Dashboard;
