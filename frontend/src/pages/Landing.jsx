@@ -1,30 +1,31 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Landing.css';
 
-function Landing() {
+const Landing = () => {
   return (
-    <div className="landing-container">
-      <header className="landing-header">
-        <h1 className="landing-logo">CareerMatch</h1>
-        <nav>
-          <Link className="landing-link" to="/login">Login</Link>
-          <Link className="landing-link" to="/register">Register</Link>
-        </nav>
+    <div className="landing-section">
+      <header className="navbar">
+        <div className="logo">CareerMatch</div>
+        <div className="nav-links">
+          <Link to="/login">Login</Link>
+          <Link to="/register">Register</Link>
+        </div>
       </header>
 
-      <main className="landing-main">
-        <h2 className="landing-title">Find the Perfect Job with AI</h2>
-        <p className="landing-subtitle">
-          Unlock job opportunities tailored to your skills and goals.
-        </p>
-        <Link to="/dashboard" className="landing-cta">Get Started</Link>
+      <main className="hero">
+        <h1>Find the Perfect Job with AI</h1>
+        <p>Unlock job opportunities tailored to your skills and goals.</p>
+        <Link to="/register" className="cta-button">
+          Get Started
+        </Link>
       </main>
 
-      <footer className="landing-footer">
-        <p>© 2025 CareerMatch. All rights reserved.</p>
+      <footer className="footer">
+        © 2025 CareerMatch. All rights reserved.
       </footer>
     </div>
   );
-}
+};
 
 export default Landing;

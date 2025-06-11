@@ -1,72 +1,83 @@
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: #0f172a;
-  color: #f8fafc;
+  color: #fff;
 }
 
-.landing-container {
+.landing-section {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  justify-content: space-between;
 }
 
-.landing-header {
+.navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: #1e293b;
-  padding: 1rem 2rem;
+  padding: 1.5rem 3rem;
+  background-color: #0f172a;
+  border-bottom: 1px solid #1e293b;
 }
 
-.landing-logo {
+.logo {
   font-size: 1.8rem;
-  font-weight: bold;
+  font-weight: 700;
+  color: #ffffff;
 }
 
-.landing-link {
-  color: #f8fafc;
-  text-decoration: none;
+.nav-links a {
   margin-left: 1.5rem;
-  font-weight: 500;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ffffff;
+  transition: color 0.3s;
 }
 
-.landing-main {
-  flex: 1;
+.nav-links a:hover {
+  color: #60a5fa;
+}
+
+.hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 2rem;
 }
 
-.landing-title {
-  font-size: 2.5rem;
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
   margin-bottom: 1rem;
 }
 
-.landing-subtitle {
+.hero p {
   font-size: 1.2rem;
-  color: #94a3b8;
   margin-bottom: 2rem;
-  max-width: 600px;
+  color: #cbd5e1;
 }
 
-.landing-cta {
+.cta-button {
   background-color: #3b82f6;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.375rem;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
-.landing-footer {
+.cta-button:hover {
+  background-color: #2563eb;
+}
+
+.footer {
   text-align: center;
   padding: 1rem;
-  font-size: 0.9rem;
-  background-color: #1e293b;
-  color: #cbd5e1;
+  background-color: #0f172a;
+  font-size: 0.875rem;
+  border-top: 1px solid #1e293b;
+  color: #94a3b8;
 }
