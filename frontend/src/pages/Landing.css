@@ -1,98 +1,95 @@
-/* Reset and base layout */
-* {
-  box-sizing: border-box;
+/* Reset default body and html styles */
+body, html {
   margin: 0;
   padding: 0;
-}
-
-html, body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9fafb;
+  background-color: #f4f7fa;
 }
 
-/* Container for entire landing page */
+/* Ensure full width container */
 .landing-container {
-  width: 100%;
-  padding: 2rem;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #f4f7fa;
+  box-sizing: border-box;
 }
 
-/* Header section */
+/* Header styles */
 .landing-header {
   text-align: center;
-  margin-bottom: 3rem;
+  padding: 60px 20px 40px;
 }
 
 .landing-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #111827;
+  font-size: 2.8rem;
+  color: #1f2937;
+  margin-bottom: 10px;
 }
 
 .landing-header p {
   font-size: 1.1rem;
   color: #6b7280;
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
 }
 
 /* Buttons */
 .landing-buttons {
   display: flex;
-  gap: 1rem;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .landing-buttons button {
+  padding: 10px 25px;
+  font-size: 1rem;
   background-color: #2563eb;
-  color: white;
-  padding: 0.75rem 1.5rem;
+  color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
 .landing-buttons button:hover {
-  background-color: #1e40af;
+  background-color: #1d4ed8;
 }
 
-/* Features section */
+/* Features Section */
 .landing-features {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 50px 20px;
   max-width: 1200px;
+  width: 100%;
 }
 
 .feature-box {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 1.5rem;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  flex: 1 1 280px;
+  max-width: 360px;
+  box-sizing: border-box;
   text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.feature-box:hover {
-  transform: translateY(-4px);
 }
 
 .feature-box h3 {
+  font-size: 1.3rem;
   color: #111827;
-  margin-bottom: 0.75rem;
+  margin-bottom: 10px;
 }
 
 .feature-box p {
-  color: #6b7280;
+  color: #4b5563;
+  font-size: 1rem;
 }
