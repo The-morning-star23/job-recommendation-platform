@@ -1,17 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
+  const location = useLocation();
+
   return (
     <header className="navbar">
       <div className="logo">
-        <Link to="/">CareerMatch</Link>
+        <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
+          CareerMatch
+        </Link>
       </div>
       <nav className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/career-match">CareerMatch</Link>
+        {location.pathname !== '/' && (
+          <Link to="/">Home</Link>
+        )}
         <Link to="/login">Login</Link>
+        <Link to="/register">Register</Link>
       </nav>
     </header>
   );
