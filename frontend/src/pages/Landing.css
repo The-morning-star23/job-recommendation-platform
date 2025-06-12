@@ -15,34 +15,6 @@ body, html, #root {
   min-height: 100vh;
 }
 
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 3rem;
-  background-color: #0f172a;
-  border-bottom: 1px solid #1e293b;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.nav-links a {
-  margin-left: 1.5rem;
-  text-decoration: none;
-  font-weight: 600;
-  color: #ffffff;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #60a5fa;
-}
-
 /* Hero section */
 .hero {
   flex-grow: 1;
