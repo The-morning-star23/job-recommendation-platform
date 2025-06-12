@@ -2,19 +2,20 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Landing from './pages/Landing';
 import Login from './pages/Login'
 import Register from './pages/Register';
-import Dashboard from './pages/Dashboard'
+import Header from './pages/Header';
 
 function App() {
   return (
     <Router>
+      <><Header />
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/career-match" element={<CareerMatch />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+    </Routes></>
     </Router>
   )
 }
 
-export default App
+export default App;
