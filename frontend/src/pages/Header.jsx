@@ -18,7 +18,7 @@ const Header = () => {
       </div>
       <nav className="nav-links">
         <Link to="/" onClick={handleHomeClick}>Home</Link>
-        <Link to="/career-match">CareerMatch</Link>
+        <Link to="/Register">Register</Link>
         <Link to="/login">Login</Link>
       </nav>
     </header>

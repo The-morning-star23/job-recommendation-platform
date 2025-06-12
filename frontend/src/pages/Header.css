@@ -2,25 +2,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
-  background-color: #0f172a;
-  border-bottom: 1px solid #1e293b;
+  padding: 1rem 2rem;
+  background-color: #0b1120;
 }
 
 .logo a {
-  font-size: 1.8rem;
-  font-weight: 700;
   color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
   text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
 }
 
 .nav-links a {
   color: #ffffff;
-  transition: opacity 0.3s;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #ffffff;
   opacity: 0.75;
+  color: #ffffff;
 }
-
