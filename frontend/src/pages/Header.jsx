@@ -5,19 +5,21 @@ import './Header.css';
 const Header = () => {
   const location = useLocation();
 
+  const handleHomeClick = () => {
+    if (location.pathname === '/') {
+      window.location.reload();
+    }
+  };
+
   return (
     <header className="navbar">
       <div className="logo">
-        <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
-          CareerMatch
-        </Link>
+        <Link to="/" onClick={handleHomeClick}>CareerMatch</Link>
       </div>
       <nav className="nav-links">
-        {location.pathname !== '/' && (
-          <Link to="/">Home</Link>
-        )}
+        <Link to="/" onClick={handleHomeClick}>Home</Link>
+        <Link to="/career-match">CareerMatch</Link>
         <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
       </nav>
     </header>
   );
